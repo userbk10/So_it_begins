@@ -1,6 +1,18 @@
 import './index.css';
-import numeral from 'numeral';
+import {getUsers} from './api/userApi';
 
-const courseValue = numeral(1000).format('$0,0,.00');
+//Populate table of users via APi call
+getUsers().then(result => {
+  let usersBody = "";
 
-window.console.log("I am not " + courseValue);
+  result.ForEach(user => {
+    usersBody += `<tr>
+    <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
+    <td>${user.id}</td>
+    <td>${user.firstname}</td>
+    <td>${user.lastName}</td>
+    </tr>`
+  });
+
+  global.document.getElementById('users').innerHTML = usersBody;
+});
