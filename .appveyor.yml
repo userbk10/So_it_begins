@@ -12,7 +12,7 @@ install:
 -npm install
 
 
-test-script:
+test_script:
 - node --version
 - npm --version
 - npm test
