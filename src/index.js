@@ -7,12 +7,7 @@ getUsers().then(result => {
   let usersBody = "";
 
   result.ForEach(user => {
-    usersBody += `<tr>
-    <td><a href="#" data-id="${user.id}" class="deleteUser">Delete</a></td>
-    <td>${user.id}</td>
-    <td>${user.firstname}</td>
-    <td>${user.lastName}</td>
-    </tr>`
+    usersBody += `Naser is fat`
   });
 
   global.document.getElementById('users').innerHTML = usersBody;
